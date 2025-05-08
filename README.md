@@ -14,26 +14,78 @@ Register File: Determining the number and size (16-bit) of general-purpose regis
 Addressing Modes: Deciding how memory addresses will be calculated (e.g., immediate, direct, register indirect, indexed).
 
 Component Block Diagrams
-Register file:
 
-Register file
+Register File:
 
-Decoder:
+![image](https://github.com/user-attachments/assets/b944a457-f473-46a9-8703-59ce3b86a418)
 
-Decoder
+Data Memory:
+
+![image](https://github.com/user-attachments/assets/bced41e8-1df9-48ad-929a-398b324ae14a)
 
 ALU:
 
-ALU
+![image](https://github.com/user-attachments/assets/b9e2ddda-af72-44cf-9762-cba0106f7dd3)
 
 Control Unit:
 
-Control Unit
+![image](https://github.com/user-attachments/assets/09b80ead-9cdf-48ac-95b4-fea067904cc9)
 
-PC:
+RISC CPU:
 
-PC
+![image](https://github.com/user-attachments/assets/5e7b581f-21f9-4946-b582-5da72b27e05c)
 
-RAM/Memory:
 
-RAM/Memory
+ISA
+Instructions
+Terms:
+R = register
+U = unused
+rD = destination register
+rM = first operand register
+rN = second operand register
+c = condition bit
+I(8)/(5) = immediate data bits, 8 or 5
+Instruction	Form	Implementation	Condition bit	OPCODE
+ADD	RRR	rD = rM + rN	c: 1/0 = signed/unsigned	0000
+SUB	RRR	rD = rM - rN	c: 1/0 = signed/unsigned	0001
+NOT	RRU	rD = not rN	c: N/A	0010
+AND	RRR	rD = rM and rN	c: N/A	0011
+OR	RRR	rD = rM or rN	c: N/A	0100
+XOR	RRR	rD = rM xor rN	c: N/A	0101
+LSL	RRI(5)	rD = rM << rN	c: N/A	0110
+LSR	RRI(5)	rD = rM >> rN	c: N/A	0111
+CMP	RRR	rD = cmp(rM, rN)	c: 1/0 = signed/unsigned	1000
+B	UI(8)	PC = rM or 8-bit immediate	c: 1/0 = rM/8-bit immediate	1001
+BEQ	URR	PC = rM conditional on rN	c: N/A	1010
+IMMEDIATE	RI(8)	rD = 8-bit immediate	c: 1/0 = upper/lower 8-bits	1011
+LD	RRU	rD = memory(rM)	c: N/A	1100
+ST	URR	memory(rM) = rN	c: N/A	1101
+
+Instruction layout
+
+Processor Control Unit Design
+
+![image](https://github.com/user-attachments/assets/4a329095-ecba-4c5f-a4b0-725eda57b23d)
+
+ALU Control Unit Design
+
+![image](https://github.com/user-attachments/assets/06c1f421-e0ae-4df2-8047-42186701f592)
+
+Updates:
+All the Data memory had been imposed only instruction memory is not fetched. Working on it to show the complete waveform of the of the processor. It the best we have achieved so faar.
+
+![image](https://github.com/user-attachments/assets/1804a2b5-f1a8-4469-af2b-8c97ba4fa77c)
+
+Schematic:
+
+link to schematic : https://pdflink.to/e50c6e37/
+
+
+
+
+
+
+
+
+
