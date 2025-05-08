@@ -12,3 +12,28 @@ When considering a 16-bit RISC processor for your project, you might look at exi
 Instruction Set: Defining the specific set of simple instructions the processor will support (e.g., arithmetic, logical, load/store, control flow). The number of instructions will be significantly less than a CISC architecture.
 Register File: Determining the number and size (16-bit) of general-purpose registers, which are used to hold operands and intermediate results, minimizing memory access.
 Addressing Modes: Deciding how memory addresses will be calculated (e.g., immediate, direct, register indirect, indexed).
+
+Component Block Diagrams
+Register file:
+
+Register file
+
+Decoder:
+
+Decoder
+
+ALU:
+
+ALU
+
+Control Unit:
+
+Control Unit
+
+PC:
+
+PC
+
+RAM/Memory:
+
+RAM/Memory
